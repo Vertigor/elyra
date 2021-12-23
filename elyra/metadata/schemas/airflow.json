@@ -65,18 +65,18 @@
           }
         },
         "github_api_endpoint": {
-          "title": "GitHub API Endpoint",
+          "title": "GitLab API Endpoint",
           "description": "The GitHub Server URL / API endpoint - Public or Enterprise",
           "type": "string",
           "format": "uri",
-          "default": "https://api.github.com",
+          "default": "http://gitlab.js.sgcc.com.cn",
           "uihints": {
             "category": "Apache Airflow",
-            "placeholder": "https://your-github-endpoint"
+            "placeholder": "https://your-gitlab-endpoint"
           }
         },
         "github_repo": {
-          "title": "GitHub DAG Repository",
+          "title": "GitLab DAG Repository",
           "description": "Existing repository where DAGs are stored",
           "type": "string",
           "uihints": {
@@ -85,16 +85,16 @@
           }
         },
         "github_branch": {
-          "title": "GitHub DAG Repository Branch",
-          "description": "Existing branch in the GitHub repository where DAGs are stored",
+          "title": "GitLab DAG Repository Branch",
+          "description": "Existing branch in the GitLab repository where DAGs are stored",
           "type": "string",
           "uihints": {
             "category": "Apache Airflow"
           }
         },
         "github_repo_token": {
-          "title": "GitHub Personal Access Token",
-          "description": "GitHub token with push access for the DAG repository",
+          "title": "GitLab Personal Access Token",
+          "description": "GitLab token with push access for the DAG repository",
           "type": "string",
           "uihints": {
             "secure": true,
