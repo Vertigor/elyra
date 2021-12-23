@@ -1,6 +1,6 @@
 {
-  "$schema": "https://raw.githubusercontent.com/elyra-ai/elyra/master/elyra/metadata/schemas/meta-schema.json",
-  "$id": "https://raw.githubusercontent.com/elyra-ai/elyra/master/elyra/metadata/schemas/local-directory-catalog.json",
+  "$schema": "https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/elyra/metadata/schemas/meta-schema.json",
+  "$id": "https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/elyra/metadata/schemas/local-directory-catalog.json",
   "title": "Directory Component Catalog",
   "name": "local-directory-catalog",
   "display_name": "Directory Component Catalog",

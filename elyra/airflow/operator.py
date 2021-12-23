@@ -32,12 +32,12 @@ ELYRA_GITHUB_ORG = os.getenv("ELYRA_GITHUB_ORG", "elyra-ai")
 ELYRA_GITHUB_BRANCH = os.getenv("ELYRA_GITHUB_BRANCH", "master" if 'dev' in __version__ else "v" + __version__)
 
 ELYRA_BOOTSCRIPT_URL = os.getenv('ELYRA_BOOTSTRAP_SCRIPT_URL',
-                                 'https://raw.githubusercontent.com/{org}/elyra/{branch}/elyra/airflow/bootstrapper.py'.
+                                 'http://gitlab.js.sgcc.com.cn/{org}/elyra/raw/{branch}/elyra/airflow/bootstrapper.py'.
                                  format(org=ELYRA_GITHUB_ORG,
                                         branch=ELYRA_GITHUB_BRANCH))
 
 ELYRA_REQUIREMENTS_URL = os.getenv('ELYRA_REQUIREMENTS_URL',
-                                   'https://raw.githubusercontent.com/{org}/'
+                                   'http://gitlab.js.sgcc.com.cn/{org}/'
                                    'elyra/{branch}/etc/generic/requirements-elyra.txt'.
                                    format(org=ELYRA_GITHUB_ORG,
                                           branch=ELYRA_GITHUB_BRANCH))

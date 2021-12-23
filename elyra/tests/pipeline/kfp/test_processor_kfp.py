@@ -282,7 +282,7 @@ def test_processing_url_runtime_specific_component(monkeypatch, processor, sampl
     reader = UrlComponentCatalogConnector(kfp_supported_file_types)
 
     # Assign test resource location
-    url = 'https://raw.githubusercontent.com/elyra-ai/elyra/master/' \
+    url = 'https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/' \
           'elyra/tests/pipeline/resources/components/filter_text.yaml'
 
     # Read contents of given path -- read_component_definition() returns a
@@ -385,7 +385,7 @@ def test_processing_filename_runtime_specific_component(monkeypatch, processor, 
     # Construct hypothetical operation for component
     operation_name = "Download data test"
     operation_params = {
-        "url": "https://raw.githubusercontent.com/elyra-ai/elyra/master/tests/assets/helloworld.ipynb",
+        "url": "https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/tests/assets/helloworld.ipynb",
         "curl_options": "--location"
     }
     operation = Operation(id='download-data-id',

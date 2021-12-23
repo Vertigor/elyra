@@ -295,7 +295,7 @@ def test_parse_kfp_component_url():
     kfp_supported_file_types = [".yaml"]
     reader = UrlComponentCatalogConnector(kfp_supported_file_types)
 
-    url = 'https://raw.githubusercontent.com/kubeflow/pipelines/1.4.1/components/notebooks/Run_notebook_using_papermill/component.yaml'  # noqa: E501
+    url = 'https://gitlab.js.sgcc.com.cn/kubeflow/pipelines/raw/1.4.1/components/notebooks/Run_notebook_using_papermill/component.yaml'  # noqa: E501
 
     # Read contents of given path -- read_component_definition() returns a
     # a dictionary of component definition content indexed by path
@@ -391,7 +391,7 @@ async def test_parse_components_additional_metatypes():
     kfp_supported_file_types = [".yaml"]
     reader = UrlComponentCatalogConnector(kfp_supported_file_types)
 
-    url = 'https://raw.githubusercontent.com/kubeflow/pipelines/1.4.1/components/keras/Train_classifier/from_CSV/component.yaml'  # noqa: E501
+    url = 'https://gitlab.js.sgcc.com.cn/kubeflow/pipelines/raw/1.4.1/components/keras/Train_classifier/from_CSV/component.yaml'  # noqa: E501
 
     # Read contents of given path -- read_component_definition() returns a
     # a dictionary of component definition content indexed by path

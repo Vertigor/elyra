@@ -13,11 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 from typing import Optional
 
-from github import Github
-from github import GithubException
+from gitlab import Gitlab
+from gitlab import GitlabError
 from traitlets.config import LoggingConfigurable
 from urllib3.util import parse_url
 
@@ -28,7 +27,7 @@ class GithubClient(LoggingConfigurable):
                  token: str,
                  repo: str,
                  branch: Optional[str] = None,
-                 server_url: Optional[str] = "https://api.github.com",
+                 server_url: Optional[str] = "https://gitlab.com",
                  **kwargs):
         """
         Creates a Github Client for Elyra
@@ -49,11 +48,11 @@ class GithubClient(LoggingConfigurable):
         self.server_url = server_url.rstrip('/')
         self.repo_name = repo
         self.branch = branch
-        self.client = Github(login_or_token=token, base_url=self.server_url)
+        self.client = Gitlab(private_token=token, url=self.server_url)
 
         try:
-            self.github_repository = self.client.get_repo(self.repo_name)
-        except GithubException as e:
+            self.github_repository = self.client.projects.get(self.repo_name)
+        except GitlabError as e:
             self.log.error(f'Error accessing repository {self.repo_name}: {e.data["message"]} ({e.status})')
             raise RuntimeError(f'Error accessing repository {self.repo_name}: {e.data["message"]} ({e.status}). ' +
                                'Please validate your runtime configuration details and retry.') from e
@@ -72,19 +71,25 @@ class GithubClient(LoggingConfigurable):
             with open(pipeline_filepath) as input_file:
                 content = input_file.read()
 
-                self.github_repository.create_file(path=pipeline_name + ".py",
-                                                   message="Pushed DAG " + pipeline_name,
-                                                   content=content,
-                                                   branch=self.branch)
+                self.github_repository.files.create(
+                    {
+                        'file_path': pipeline_name + ".py",
+                        'branch': self.branch,
+                        'content': content,
+                        'author_email': 'test@example.com',
+                        'author_name': 'yourname',
+                        'commit_message': "Pushed DAG " + pipeline_name
+                    }
+                )
 
             self.log.info('Pipeline successfully added to the git queue')
 
         except FileNotFoundError as fnfe:
             self.log.error(f'Unable to locate local DAG file to upload: {pipeline_filepath}: ' + str(fnfe))
             raise RuntimeError(f'Unable to locate local DAG file to upload: {pipeline_filepath}: {str(fnfe)}') from fnfe
-        except GithubException as e:
-            self.log.error(f'Error uploading DAG to branch {self.branch}: {e.data["message"]} ({e.status})')
-            raise RuntimeError(f'Error uploading DAG to branch {self.branch}: {e.data["message"]} ({e.status}). ' +
+        except GitlabError as e:
+            self.log.error(f'Error uploading DAG to branch {self.branch}: {e.error_message}')
+            raise RuntimeError(f'Error uploading DAG to branch {self.branch}: {e.error_message}. ' +
                                'Please validate your runtime configuration details and retry.') from e
 
     @staticmethod

@@ -25,7 +25,7 @@ The links below provide more details on how to install/configure JupyterHub:
  - [Zero to JupyterHub with Kubernetes](https://zero-to-jupyterhub.readthedocs.io/en/latest/index.html)
  - [Ansible script to deploy Elyra, JupyterHub, Jupyter Enterprise Gateway](https://github.com/lresende/ansible-kubernetes-cluster)
 
-![JupyterHub Deployment](https://raw.githubusercontent.com/lresende/ansible-kubernetes-cluster/master/docs/images/elyra-deployment-diagram.png)
+![JupyterHub Deployment](https://gitlab.js.sgcc.com.cn/lresende/ansible-kubernetes-cluster/raw/master/docs/images/elyra-deployment-diagram.png)
 
 ## Configuring JupyterHub Deployment
 
@@ -57,7 +57,7 @@ Jupyter Enterprise Gateway enables support for remote kernels in a Jupyter Deplo
  * Deploying Jupyter Enterprise gateway
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/jupyter/enterprise_gateway/v2.1.1/etc/kubernetes/enterprise-gateway.yaml
+kubectl apply -f https://gitlab.js.sgcc.com.cn/jupyter/enterprise_gateway/raw/v2.1.1/etc/kubernetes/enterprise-gateway.yaml
 ```
 
 ## Connecting JupyterHub and Jupyter Enterprise Gateway

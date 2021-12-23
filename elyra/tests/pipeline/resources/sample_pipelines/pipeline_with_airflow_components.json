@@ -269,7 +269,7 @@
               },
               "icon_url": {
                 "activeControl": "StringControl",
-                "StringControl": "https://raw.githubusercontent.com/apache/airflow/master/airflow/www/static/pin_100.png"
+                "StringControl": "https://gitlab.js.sgcc.com.cn/apache/airflow/raw/master/airflow/www/static/pin_100.png"
               },
               "attachments": {
                 "activeControl": "StringControl",

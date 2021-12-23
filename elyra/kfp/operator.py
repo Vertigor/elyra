@@ -43,14 +43,14 @@ INOUT_SEPARATOR = ';'
 
 ELYRA_GITHUB_ORG = os.getenv("ELYRA_GITHUB_ORG", "elyra-ai")
 ELYRA_GITHUB_BRANCH = os.getenv("ELYRA_GITHUB_BRANCH", "master" if 'dev' in __version__ else "v" + __version__)
-ELYRA_PIP_CONFIG_URL = os.getenv('ELYRA_PIP_CONFIG_URL', 'https://raw.githubusercontent.com/{org}/elyra/'
+ELYRA_PIP_CONFIG_URL = os.getenv('ELYRA_PIP_CONFIG_URL', 'https://gitlab.js.sgcc.com.cn/{org}/elyra/raw/'
                                                          '{branch}/etc/kfp/pip.conf'.
                                                          format(org=ELYRA_GITHUB_ORG, branch=ELYRA_GITHUB_BRANCH))
-ELYRA_BOOTSTRAP_SCRIPT_URL = os.getenv('ELYRA_BOOTSTRAP_SCRIPT_URL', 'https://raw.githubusercontent.com/{org}/'
+ELYRA_BOOTSTRAP_SCRIPT_URL = os.getenv('ELYRA_BOOTSTRAP_SCRIPT_URL', 'https://gitlab.js.sgcc.com.cn/{org}/'
                                                                      'elyra/{branch}/elyra/kfp/bootstrapper.py'.
                                                                      format(org=ELYRA_GITHUB_ORG,
                                                                             branch=ELYRA_GITHUB_BRANCH))
-ELYRA_REQUIREMENTS_URL = os.getenv('ELYRA_REQUIREMENTS_URL', 'https://raw.githubusercontent.com/{org}/'
+ELYRA_REQUIREMENTS_URL = os.getenv('ELYRA_REQUIREMENTS_URL', 'https://gitlab.js.sgcc.com.cn/{org}/'
                                                              'elyra/{branch}/etc/generic/requirements-elyra.txt'.
                                                              format(org=ELYRA_GITHUB_ORG,
                                                                     branch=ELYRA_GITHUB_BRANCH))

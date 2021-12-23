@@ -66,7 +66,7 @@ def test_modify_component_catalogs():
     metadata_manager = MetadataManager(schemaspace=ComponentCatalogs.COMPONENT_CATALOGS_SCHEMASPACE_ID)
 
     # Create new registry instance with a single URL-based component
-    urls = ["https://raw.githubusercontent.com/elyra-ai/elyra/master/elyra/tests/pipeline/resources/components/"
+    urls = ["https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/elyra/tests/pipeline/resources/components/"
             "airflow_test_operator.py"]
 
     instance_metadata = {
@@ -101,7 +101,7 @@ def test_modify_component_catalogs():
     assert 'TestOperatorNoInputs' not in added_component_names
 
     # Modify the test registry to add an additional path to
-    urls.append("https://raw.githubusercontent.com/elyra-ai/elyra/master/elyra/tests/pipeline/resources/components"
+    urls.append("https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/elyra/tests/pipeline/resources/components"
                 "/airflow_test_operator_no_inputs.py")
     metadata_manager.update("new_test_registry", registry_instance)
 
@@ -268,7 +268,7 @@ def test_parse_airflow_component_url():
     airflow_supported_file_types = [".py"]
     reader = UrlComponentCatalogConnector(airflow_supported_file_types)
 
-    url = 'https://raw.githubusercontent.com/apache/airflow/1.10.15/airflow/operators/bash_operator.py'  # noqa: E501
+    url = 'https://gitlab.js.sgcc.com.cn/apache/airflow/raw/1.10.15/airflow/operators/bash_operator.py'  # noqa: E501
 
     # Read contents of given path -- read_component_definition() returns a
     # a dictionary of component definition content indexed by path
@@ -428,7 +428,7 @@ def test_parse_airflow_component_file_type_hints():
 
 @pytest.mark.parametrize('invalid_url', [
     'https://nourl.py',  # test an invalid host
-    'https://raw.githubusercontent.com/elyra-ai/elyra/master/elyra/\
+    'https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/elyra/\
      pipeline/tests/resources/components/invalid_file.py'  # test an invalid file
 ], indirect=True)
 async def test_parse_components_invalid_url(invalid_url):

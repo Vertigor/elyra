@@ -86,7 +86,7 @@ To deploy Kubeflow using the Open Data Hub operator:
 1. Create a new deployment by clicking `Create instance`.
 1. Select `Configure via YAML view`.
 1. Remove the default deployment configuration in the editor.
-1. Open [this Kubeflow v1.3 deployment file for OpenShift](https://raw.githubusercontent.com/kubeflow/manifests/master/distributions/kfdef/kfctl_openshift_v1.3.0.yaml) in a new browser tab/window.
+1. Open [this Kubeflow v1.3 deployment file for OpenShift](https://gitlab.js.sgcc.com.cn/kubeflow/manifests/raw/master/distributions/kfdef/kfctl_openshift_v1.3.0.yaml) in a new browser tab/window.
 1. Copy and paste the content of this file into the editor.
    ![Deploy Kubeflow using ODH operator](../images/recipes/deploying-elyra-with-opendatahub/deploy-kubeflow-kfdef.png)
 1. Click `Create` to deploy Kubeflow on the cluster.

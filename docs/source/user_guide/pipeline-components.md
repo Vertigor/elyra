@@ -166,7 +166,7 @@ $ elyra-metadata install component-catalogs \
        --description="filter text in files" \
        --runtime_type=KUBEFLOW_PIPELINES \
        --schema_name="url-catalog"\
-       --paths="['https://raw.githubusercontent.com/elyra-ai/elyra/master/etc/config/components/kfp/filter_text_using_shell_and_grep.yaml']" \
+       --paths="['https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/etc/config/components/kfp/filter_text_using_shell_and_grep.yaml']" \
        --categories='["filter content"]'
 ```
 
@@ -183,7 +183,7 @@ $ elyra-metadata install component-catalogs \
        --description="filter text in files" \
        --runtime_type=KUBEFLOW_PIPELINES \
        --schema_name="url-catalog"\
-       --paths="['https://raw.githubusercontent.com/elyra-ai/elyra/master/etc/config/components/kfp/filter_text_using_shell_and_grep.yaml']" \
+       --paths="['https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/etc/config/components/kfp/filter_text_using_shell_and_grep.yaml']" \
        --categories='["file operations"]' \
        --replace
 ```
@@ -338,8 +338,8 @@ The URL component catalog connector provides access to components that are store
 - You can specify one or more URLs.
 
 Examples (GUI):
- - `https://raw.githubusercontent.com/elyra-ai/elyra/master/etc/config/components/kfp/run_notebook_using_papermill.yaml`
+ - `https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/etc/config/components/kfp/run_notebook_using_papermill.yaml`
 
 Examples (CLI):
- - `['https://raw.githubusercontent.com/elyra-ai/elyra/master/etc/config/components/kfp/run_notebook_using_papermill.yaml']`
+ - `['https://gitlab.js.sgcc.com.cn/elyra-ai/elyra/raw/master/etc/config/components/kfp/run_notebook_using_papermill.yaml']`
  - `['<URL_1>','<URL_2>']`
